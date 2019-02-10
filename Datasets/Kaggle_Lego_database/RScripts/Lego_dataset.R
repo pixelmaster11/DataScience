@@ -2,29 +2,32 @@
 library(dplyr)
 library(ggplot2)
 
+#DATA: https://www.kaggle.com/rtatman/lego-database
+
+
 #Fiile path for lego dataset
-filepath <- "D:\\Tuts\\DataScience\\Datasets\\lego_database"
+filepath <- "D:\\Git_DataScience_Projects\\DataScience\\Datasets"
 
 #Fetch Datasets
 
 #Get the sets dataset
-sets <- read.csv(paste(filepath,"sets.csv", sep = "\\"))
+sets <- read.csv(paste(filepath,"Kaggle_Lego_database\\Data\\sets.csv", sep = "\\"))
 
-parts <- read.csv(paste(filepath,"parts.csv", sep = "\\"))
+parts <- read.csv(paste(filepath,"Kaggle_Lego_database\\Data\\parts.csv", sep = "\\"))
 
-colors <- read.csv(paste(filepath,"colors.csv", sep = "\\"))
+colors <- read.csv(paste(filepath,"Kaggle_Lego_database\\Data\\colors.csv", sep = "\\"))
 
-themes <- read.csv(paste(filepath, "themes.csv", sep = "\\"))
+themes <- read.csv(paste(filepath, "Kaggle_Lego_database\\Data\\themes.csv", sep = "\\"))
 
 
-part_categories <- parts <- read.csv(paste(filepath,"part_categories.csv", sep = "\\"))
+part_categories <- parts <- read.csv(paste(filepath,"Kaggle_Lego_database\\Data\\part_categories.csv", sep = "\\"))
 
 #Get the inventory datasets
-inventory <- read.csv(paste(filepath,"inventories.csv", sep = "\\"))
+inventory <- read.csv(paste(filepath,"Kaggle_Lego_database\\Data\\inventories.csv", sep = "\\"))
 
-inventory_parts <- read.csv(paste(filepath, "inventory_parts.csv", sep = "\\"))
+inventory_parts <- read.csv(paste(filepath, "Kaggle_Lego_database\\Data\\inventory_parts.csv", sep = "\\"))
 
-inventory_sets <- read.csv(paste(filepath,"inventory_sets.csv", sep = "\\"))
+inventory_sets <- read.csv(paste(filepath,"Kaggle_Lego_database\\Data\\inventory_sets.csv", sep = "\\"))
 
 
 #****************************************COLORS ************************************

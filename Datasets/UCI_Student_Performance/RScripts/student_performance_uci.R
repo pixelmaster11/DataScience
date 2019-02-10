@@ -13,11 +13,11 @@ library(caTools)
 #https://archive.ics.uci.edu/ml/datasets/Student+Performance
 
 
-filepath <- "D:\\Tuts\\DataScience\\Datasets\\Student_Performance_UCI"
+filepath <- "D:\\Git_DataScience_Projects\\DataScience\\Datasets"
 
-#Separated by semicolon ;
+#Data file Separated by semicolon ;
 #Mathematics data set
-student_data <- read.csv(paste(filepath, "student-mat.csv", sep = "\\"), sep = ";")
+student_data <- read.csv(paste(filepath, "UCI_Student_Performance\\Data\\student-mat.csv", sep = "\\"), sep = ";")
 
 #No Null NA values
 any(is.na(student_data))

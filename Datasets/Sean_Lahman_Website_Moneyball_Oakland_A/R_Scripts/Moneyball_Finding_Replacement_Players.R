@@ -3,9 +3,12 @@ library(dplyr)
 library(tidyr)
 library(ggfortify)
 
-filepath <- "D:\\Tuts\\DataScience\\Datasets\\Moneyball_Oakland_A"
+#GOAL: Find 3 replacement players (batters) for OAkland A's during the year 2001 when they lost their 3 players
+#Data: http://www.seanlahman.com/baseball-archive/statistics/
 
-batting <- read.csv(paste(filepath , "Batting.csv", sep = "\\"))
+filepath <- "D:\\Git_DataScience_Projects\\DataScience\\Datasets"
+
+batting <- read.csv(paste(filepath , "Sean_Lahman_Website_Moneyball_Oakland_A\\Data\\Batting.csv", sep = "\\"))
 
 str(batting)
 
@@ -33,7 +36,7 @@ str(batting)
 
 #Merge Salary data with Batting Data (To find the most undervalued players)
 
-salaries <- read.csv(paste(filepath , "Salaries.csv", sep = "\\"))
+salaries <- read.csv(paste(filepath , "Sean_Lahman_Website_Moneyball_Oakland_A\\Data\\Salaries.csv", sep = "\\"))
 
 summary(salaries)
 

@@ -9,11 +9,13 @@ library(corrplot)
 library(caTools)
 library(Amelia)
 
+#Goal: Predict Survival of passengers onboard titanic (Current accuracy 76.67%)
+#Data: https://www.kaggle.com/c/titanic/data
 
-filepath <- "D:\\Tuts\\DataScience\\Datasets\\Titanic"
+filepath <- "D:\\Git_DataScience_Projects\\DataScience\\Datasets"
 
-titanic_train <- read.csv(paste(filepath , "train.csv", sep = "\\"))
-titanic_test <- read.csv(paste(filepath, "test.csv", sep = "\\"))
+titanic_train <- read.csv(paste(filepath , "Kaggle_Titanic\\Data\\train.csv", sep = "\\"))
+titanic_test <- read.csv(paste(filepath, "Kaggle_Titanic\\Data\\test.csv", sep = "\\"))
 
 #Lot of missing Age values
 missmap(titanic_train, main = "Missing Map", col = c("Yellow", "Black"), legend = FALSE)

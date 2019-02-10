@@ -8,9 +8,12 @@ library(ggthemes)
 
 theme_update(plot.title = element_text(hjust = 0.5))
 
-filepath <- "D:\\Tuts\\DataScience\\Datasets\\students_performance_in_exams"
 
-student_performance <- read.csv(paste(filepath, "StudentsPerformance.csv", sep = "\\"))
+#DATA: https://www.kaggle.com/spscientist/students-performance-in-exams
+
+filepath <- "D:\\Git_DataScience_Projects\\DataScience\\Datasets"
+
+student_performance <- read.csv(paste(filepath, "Kaggle_Students_performance_in_exams\\Data\\StudentsPerformance.csv", sep = "\\"))
 
 df <- student_performance %>% group_by(race.ethnicity) %>% summarise(Total_Students = n())
 
@@ -275,7 +278,7 @@ df_education.grades.percents <- gather(df_education.grades.percents, Parental.Ed
  #Interpret the model
  # Male Gender, Ethnic Group E, Standard Lunch, Test Preparation none, Reading and writing score all have
  #significant effect when predicting maths scores
- #As F-stat is much much greater than 1 with considerable features, we can completely dicard null test hyp.
+ #As F-stat is much much greater than 1 with considerable number of features, we can completely dicard null test hypothesis
  #Which means the above features have significant impact while predicting maths scores of students
  summary(model)
  
@@ -302,9 +305,9 @@ df_education.grades.percents <- gather(df_education.grades.percents, Parental.Ed
  
  mathscore.predictions <- predict(model , test)
  results <- cbind(mathscore.predictions, test$math.score)
- results$Predicted <- round(results$Predicted, 0)
  colnames(results) <- c("Predicted", "Actual")
  results <- as.data.frame(results)
+ results$Predicted <- round(results$Predicted, 0)
  
  print(head(results))
  
@@ -325,7 +328,10 @@ df_education.grades.percents <- gather(df_education.grades.percents, Parental.Ed
  
  Rsquared <- 1 - (sse / sst)
  
+
  
+ 
+ #################################################### Extra###################################
  lmPred <- predict(model, test, interval = "prediction", level = 0.95)
  summary(lmPred)
  
